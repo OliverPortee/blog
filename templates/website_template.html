@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="static/style.css">
+    {% if title %}
+      <title>{{title}}</title>
+    {% else %}
+      <title>Olivers Blog</title>
+    {% endif %}
+  </head>
+  <body>
+    <nav>
+      <ul>
+        <li><a href="/" {% if active == 'home' %} id="active-menu-item"{% endif %} >home</a></li>
+        <li><a href="/blog" {% if active == 'blog' %} id="active-menu-item"{% endif %} >blog</a></li>
+        <li><a href="/contact" {% if active == 'contact' %} id="active-menu-item"{% endif %} >contact</a></li>
+      </ul>
+    </nav>
+    
+    <div id="content">
+      {% if content %}
+        {{ content|safe }}
+      {% else %}
+        <h1>This website is messed up af.</h1>
+      {% endif %}
+    </div>
+  </body>
+</html>

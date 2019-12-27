@@ -3,11 +3,7 @@
   <head>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="static/style.css">
-    {% if title %}
-      <title>{{title}}</title>
-    {% else %}
-      <title>Olivers Blog</title>
-    {% endif %}
+    <title>{{title}} @lvrsblc</title>
   </head>
   <body>
     <nav>
@@ -19,11 +15,7 @@
     </nav>
     
     <div id="content">
-      {% if content %}
-        {{ content|safe }}
-      {% else %}
-        <h1>This website is messed up af.</h1>
-      {% endif %}
+      {% block content %}{% endblock %}
     </div>
   </body>
 </html>
